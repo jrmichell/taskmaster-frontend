@@ -50,7 +50,7 @@ const TaskList: React.FC = () => {
     <div className="flex justify-center items-center flex-col">
       <TaskForm onTaskAdded={fetchTasks} />
       {tasks.length === 0 ? (
-        <p>No tasks available.</p>
+        <p className="m-4">No tasks available.</p>
       ) : (
         tasks.map((task) => (
           <TaskItem

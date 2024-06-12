@@ -12,11 +12,16 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onStatusChange }) => {
 
   return (
     <>
-      <div className="flex justify-center items-center">
-        <h1>{task.title} </h1>
+      <div className="flex justify-center items-center m-4 flex-col">
+        <h1 className="font-bold mb-1">{task.title}</h1>
         <p>
-          Status:
-          <select value={task.status} onChange={handleStatusChange}>
+          {" "}
+          Status:{" "}
+          <select
+            value={task.status}
+            onChange={handleStatusChange}
+            className="rounded-md p-1"
+          >
             <option value={TaskStatus.NOT_STARTED}>Not Started</option>
             <option value={TaskStatus.IN_PROGRESS}>In Progress</option>
             <option value={TaskStatus.COMPLETE}>Completed</option>
