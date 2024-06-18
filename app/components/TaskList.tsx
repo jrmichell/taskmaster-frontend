@@ -28,7 +28,7 @@ const TaskList: React.FC = () => {
   };
 
   const handleStatusChange = async (id: number, newStatus: TaskStatus) => {
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("tasks")
       .update({ status: newStatus })
       .eq("id", id);
@@ -38,14 +38,14 @@ const TaskList: React.FC = () => {
     } else {
       setTasks(
         tasks.map((task) =>
-          task.id === id ? { ...task, status: newStatus } : task,
-        ),
+          task.id === id ? { ...task, status: newStatus } : task
+        )
       );
     }
   };
 
   const handleDelete = async (id: number) => {
-    const { data, error } = await supabase.from("tasks").delete().eq("id", id);
+    const { error } = await supabase.from("tasks").delete().eq("id", id);
 
     if (error) {
       console.error("Error deleting task:", error);
@@ -56,9 +56,9 @@ const TaskList: React.FC = () => {
 
   const handlePriorityChange = async (
     id: number,
-    newPriority: TaskPriority,
+    newPriority: TaskPriority
   ) => {
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("tasks")
       .update({ priority: newPriority })
       .eq("id", id);
@@ -68,8 +68,8 @@ const TaskList: React.FC = () => {
     } else {
       setTasks(
         tasks.map((task) =>
-          task.id === id ? { ...task, priority: newPriority } : task,
-        ),
+          task.id === id ? { ...task, priority: newPriority } : task
+        )
       );
     }
   };
