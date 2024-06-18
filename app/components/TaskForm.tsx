@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEventHandler, MouseEventHandler, useState } from "react";
 import { TaskPriority, TaskStatus } from "../interfaces/Task";
 import { supabase } from "@/utils/supabase/client";
 
