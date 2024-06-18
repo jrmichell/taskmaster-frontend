@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import TaskItem from "./TaskItem";
 import TaskForm from "./TaskForm";
+import DeleteTaskButton from "./buttons/DeleteTaskButton";
+import UpdatePriorityButton from "./buttons/UpdatePriorityButton";
 import { Task, TaskStatus, TaskPriority } from "../interfaces/Task";
 import { supabase } from "../../utils/supabase/client";
-import DeleteTaskButton from "./DeleteTaskButton";
-import UpdatePriorityButton from "./UpdatePriorityButton";
 
 const TaskList: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);

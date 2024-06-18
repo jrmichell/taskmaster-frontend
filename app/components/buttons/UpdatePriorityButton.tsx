@@ -1,5 +1,5 @@
 import { supabase } from "@/utils/supabase/client";
-import { Task, TaskPriority } from "../interfaces/Task";
+import { Task, TaskPriority } from "../../interfaces/Task";
 
 interface UpdatePriorityButtonProps {
   task: Task;
